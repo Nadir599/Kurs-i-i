@@ -2,52 +2,52 @@
 
 const quizQuestions = [
   {
-    question: "What is the capital of France?",
+    question: "Fransanın paytaxtı hansıdır?",
     options: ["Berlin", "Madrid", "Paris", "Rome"],
     correctAnswer: "Paris"
   },
   {
-    question: "Which planet is known as the Red Planet?",
+    question: "Hansı planet Qırmızı Planet kimi tanınır?",
     options: ["Venus", "Mars", "Jupiter", "Saturn"],
     correctAnswer: "Mars"
   },
   {
-    question: "What is the largest ocean on Earth?",
+    question: "Hansı yer üzündəki ən böyük okeandır?",
     options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
     correctAnswer: "Pacific Ocean"
   },
   {
-    question: "Who painted the Mona Lisa?",
+    question: "Mona Lizanı kim çəkib?",
     options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
     correctAnswer: "Leonardo da Vinci"
   },
   {
-    question: "Which element has the chemical symbol 'O'?",
+    question: "Hansı elementin kimyəvi simvolu "O"dur?",
     options: ["Gold", "Oxygen", "Osmium", "Oganesson"],
     correctAnswer: "Oxygen"
   },
   {
-    question: "In which year did World War II end?",
+    question: "İkinci Dünya Müharibəsi hansı ildə başa çatıb?",
     options: ["1943", "1945", "1947", "1950"],
     correctAnswer: "1945"
   },
   {
-    question: "What is the largest mammal in the world?",
+    question: "Bunlardan hansı suda yaşayır?",
     options: ["African Elephant", "Blue Whale", "Giraffe", "Polar Bear"],
     correctAnswer: "Blue Whale"
   },
   {
-    question: "Which country is home to the Great Barrier Reef?",
+    question: "Böyük Sədd rifinin vətəni hansı ölkədir?",
     options: ["Brazil", "Mexico", "Australia", "Thailand"],
     correctAnswer: "Australia"
   },
   {
-    question: "What is the smallest prime number?",
+    question: "Ən kiçik sadə ədəd nədir?",
     options: ["0", "1", "2", "3"],
     correctAnswer: "2"
   },
   {
-    question: "Who wrote 'Romeo and Juliet'?",
+    question: "'Romeo və Cülyetta'nı kim yazıb?",
     options: ["Charles Dickens", "Jane Austen", "William Shakespeare", "Mark Twain"],
     correctAnswer: "William Shakespeare"
   }
@@ -243,20 +243,20 @@ export function initQuiz() {
       let message, details;
       
       if (score === quizQuestions.length) {
-        message = "Perfect Score!";
-        details = "Congratulations! You got every question right. You're a quiz master!";
+        message = "Mükəmməl!";
+        details = "Təbrik edirik! Hər sualı düzgün verdiniz. Siz quiz ustasısınız!";
       } else if (score >= quizQuestions.length * 0.8) {
-        message = "Excellent Work!";
-        details = "Great job! You've demonstrated excellent knowledge.";
+        message = "Əla!";
+        details = "Əla iş! Siz əla bilik nümayiş etdirdiniz.";
       } else if (score >= quizQuestions.length * 0.6) {
-        message = "Good Job!";
-        details = "You did well! With a little more study, you could ace it next time.";
+        message = "Yaxşı!";
+        details = "Yaxşıydı! Bir az daha çox öyrənsəniz, növbəti dəfə bunu edə bilərsiniz.";
       } else if (score >= quizQuestions.length * 0.4) {
-        message = "Not Bad!";
-        details = "You're on the right track. A bit more practice and you'll improve your score.";
+        message = "Pis deyil!";
+        details = "Doğru yoldasınız. Bir az daha çox məşq etsəniz, xalınızı yaxşılaşdıracaqsınız.";
       } else {
-        message = "Keep Trying!";
-        details = "Don't give up! Review the material and try again for a better score.";
+        message = "Cəhd etməyə davam edin!";
+        details = "Təslim olma! Materialı nəzərdən keçirin və daha yaxşı nəticə əldə etmək üçün yenidən cəhd edin.";
       }
       
       resultMessageElement.textContent = message;
