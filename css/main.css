@@ -1,0 +1,312 @@
+/* Base Styles and Variables */
+:root {
+  /* Color System */
+  --color-primary: #4A6DE5;
+  --color-primary-light: #7A92EE;
+  --color-primary-dark: #3554B8;
+  
+  --color-secondary: #8A4FFF;
+  --color-secondary-light: #A87CFF;
+  --color-secondary-dark: #6A3FCC;
+  
+  --color-accent: #FF6B6B;
+  --color-accent-light: #FF9999;
+  --color-accent-dark: #CC5555;
+  
+  --color-success: #2ECC71;
+  --color-success-light: #4CD787;
+  --color-success-dark: #25A25A;
+  
+  --color-warning: #F39C12;
+  --color-warning-light: #F7B74E;
+  --color-warning-dark: #C17D0E;
+  
+  --color-error: #E74C3C;
+  --color-error-light: #F17267;
+  --color-error-dark: #B93D30;
+  
+  --color-neutral-100: #F8F9FA;
+  --color-neutral-200: #E9ECEF;
+  --color-neutral-300: #DEE2E6;
+  --color-neutral-400: #CED4DA;
+  --color-neutral-500: #ADB5BD;
+  --color-neutral-600: #6C757D;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343A40;
+  --color-neutral-900: #212529;
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  
+  /* Spacing System (8px grid) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 2.5rem;   /* 40px */
+  --space-8: 3rem;     /* 48px */
+  --space-9: 4rem;     /* 64px */
+  --space-10: 5rem;    /* 80px */
+  
+  /* Borders and Shadows */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 6px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 15px 20px rgba(0, 0, 0, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+  
+  /* Container widths */
+  --container-max-width: 1200px;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-100);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.section {
+  padding: var(--space-10) 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Header and Navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color var(--transition);
+  background-color: rgba(248, 249, 250, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo h1 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 0;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.nav-link {
+  color: var(--color-neutral-800);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-200);
+  padding: var(--space-8) 0 var(--space-4);
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.footer-logo h2 {
+  color: white;
+  margin-bottom: var(--space-2);
+}
+
+.footer-logo span {
+  color: var(--color-primary-light);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: var(--border-radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.social-links a:hover {
+  background-color: var(--color-primary);
+}
+
+.footer-bottom {
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background-color: var(--color-primary-dark);
+}

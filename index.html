@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster - Biliklərinizi Yoxlayın</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Quiz<span>Master</span></h1>
+    </div>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Ana Səhifə</a></li>
+        <li><a href="#quiz" class="nav-link">Test</a></li>
+        <li><a href="#results" class="nav-link">Nəticələr</a></li>
+        <li><a href="#contact" class="nav-link">Əlaqə</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+      <div class="hero-content">
+        <h1 class="hero-title">Biliklərinizi Yoxlayın</h1>
+        <p class="hero-description">İnteraktiv testlə özünüzü sınayın və nəticənizi görün!</p>
+        <button id="start-quiz" class="btn btn-primary">Testə Başla</button>
+      </div>
+      <div class="hero-background"></div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section hidden">
+      <div class="container">
+        <div class="quiz-header">
+          <h2>Test Çağırışı</h2>
+          <div class="quiz-info">
+            <p>Sual <span id="current-question">1</span> / <span id="total-questions">10</span></p>
+            <p>Xal: <span id="current-score">0</span></p>
+          </div>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        
+        <div class="quiz-content">
+          <div id="question-container">
+            <h3 id="question-text">Sual mətni burada görünəcək</h3>
+            <div id="options-container" class="options-container"></div>
+          </div>
+          
+          <div class="quiz-buttons">
+            <button id="prev-btn" class="btn btn-secondary" disabled>Əvvəlki</button>
+            <button id="next-btn" class="btn btn-primary" disabled>Növbəti</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section hidden">
+      <div class="container">
+        <h2>Nəticələriniz</h2>
+        <div class="results-container">
+          <div class="score-circle">
+            <div class="score-text">
+              <span id="final-score">0</span>
+              <span id="max-score">/10</span>
+            </div>
+          </div>
+          <h3 id="result-message">Əla işləyirsiniz!</h3>
+          <p id="result-details">Testdə göstərdiyiniz nəticə.</p>
+          
+          <div class="results-actions">
+            <button id="review-answers" class="btn btn-secondary">Cavablara Bax</button>
+            <button id="retake-quiz" class="btn btn-primary">Yenidən Başla</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Answers Review Section -->
+    <section id="review" class="section hidden">
+      <div class="container">
+        <h2>Cavablarınıza Baxın</h2>
+        <div id="review-container" class="review-container"></div>
+        <button id="back-to-results" class="btn btn-primary">Nəticələrə Qayıt</button>
+      </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-grid">
+          <div class="map-container">
+            <h2>Bizi Tapın</h2>
+            <div class="map">
+              <img src="https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Xəritə" class="map-image">
+            </div>
+            <div class="address">
+              <p><i class="fas fa-map-marker-alt"></i> Bilik küçəsi 123, Bakı şəhəri</p>
+              <p><i class="fas fa-phone"></i> (012) 123-4567</p>
+              <p><i class="fas fa-envelope"></i> info@quizmaster.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <h2>Bizimlə Əlaqə</h2>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Ad</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">E-poçt</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Mesaj</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error-message" id="message-error"></span>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Mesaj Göndər</button>
+              <p id="form-success" class="success-message hidden">Təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>Quiz<span>Master</span></h2>
+          <p>Biliklərinizi yoxlayın və özünüzü sınayın!</p>
+        </div>
+        
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 QuizMaster. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+    
+    <button id="scroll-top" class="scroll-top" aria-label="Yuxarı qalx">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
