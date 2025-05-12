@@ -22,7 +22,7 @@ const quizQuestions = [
     correctAnswer: "Leonardo da Vinci"
   },
   {
-    question: "Hansı elementin kimyəvi simvolu "O"dur?",
+    question: "Hansı elementin kimyəvi simvolu 'O'dır?",
     options: ["Gold", "Oxygen", "Osmium", "Oganesson"],
     correctAnswer: "Oxygen"
   },
